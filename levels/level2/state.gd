@@ -6,8 +6,6 @@ class_name Level2State
 func enter_state(machine: GameStateMachine):
 	machine.current_level = preload("res://levels/level2/level.tscn").instantiate()
 	machine.add_child(machine.current_level)
-	machine.player.position = Vector2(90, 636.5)
-	machine.current_level.add_child(machine.player)
 
 func exit_state(machine: GameStateMachine) -> void:
 	machine.current_level.queue_free()

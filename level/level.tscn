@@ -1730,7 +1730,13 @@ texture = ExtResource("17")
 position = Vector2(96, 286)
 
 [node name="Ozempic2" parent="." instance=ExtResource("20_kp5pi")]
-position = Vector2(-161, 219)
+position = Vector2(-160, 219)
 
 [node name="Ozempic3" parent="." instance=ExtResource("20_kp5pi")]
 position = Vector2(474, 161)
+
+[node name="Ozempic4" parent="." instance=ExtResource("20_kp5pi")]
+position = Vector2(612, 66)
+
+[node name="Ozempic5" parent="." instance=ExtResource("20_kp5pi")]
+position = Vector2(60, 105)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://ctgumjaytuoch"]
+[gd_scene load_steps=26 format=4 uid="uid://db81r8i7gw2yu"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="1_b7y0n"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="4"]
@@ -67,6 +68,8 @@ _data = {
 
 [node name="Level" type="Node2D"]
 process_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_b7y0n")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true

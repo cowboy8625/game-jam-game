@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cacycbehdddxu" path="res://level/syringe2.png" id="2_sx3is"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kip0c"]
-radius = 61.0328
+radius = 23.0868
 
 [node name="Ozempic" type="Area2D"]
 script = ExtResource("1_kip0c")
@@ -16,5 +16,7 @@ shape = SubResource("CircleShape2D_kip0c")
 position = Vector2(3, 0)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_sx3is")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

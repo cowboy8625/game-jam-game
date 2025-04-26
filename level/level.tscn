@@ -1727,4 +1727,10 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("17")
 
 [node name="Ozempic" parent="." instance=ExtResource("20_kp5pi")]
-position = Vector2(277, 556)
+position = Vector2(96, 286)
+
+[node name="Ozempic2" parent="." instance=ExtResource("20_kp5pi")]
+position = Vector2(-161, 219)
+
+[node name="Ozempic3" parent="." instance=ExtResource("20_kp5pi")]
+position = Vector2(474, 161)

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @warning_ignore("unused_signal")
 signal coin_collected()
 
+@export var CHEESEBURGERS = 1
+
 const WALK_SPEED = 300.0
 const ACCELERATION_SPEED = WALK_SPEED * 6.0
 const JUMP_VELOCITY = -725.0
@@ -85,5 +87,5 @@ func try_jump() -> void:
 		jump_sound.pitch_scale = 1.5
 	else:
 		return
-	velocity.y = JUMP_VELOCITY
+	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 10)
 	jump_sound.play()

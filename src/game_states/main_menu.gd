@@ -8,6 +8,7 @@ func enter_state(machine: GameStateMachine):
 	machine.main_menu = preload("res://scenes/main_menu.tscn").instantiate()
 	var button = machine.main_menu.get_node("Control/Button")
 	button.connect("pressed", Callable(machine, "change_state").bind("MainMenu"))
+	button.connect("mouse_entered", Callable(EventHandler, "play_sound").bind("button_hover"))
 	machine.add_child(machine.main_menu)
 
 func exit_state(machine: GameStateMachine) -> void:

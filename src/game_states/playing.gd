@@ -3,16 +3,12 @@ extends State
 class_name Playing
 
 func enter_state(machine: GameStateMachine):
-	EventHandler.emit_signal("play_sound", "main_menu")
-
-	machine.main_menu = preload("res://scenes/main_menu.tscn").instantiate()
-	var button = machine.main_menu.get_node("Control/Button")
-	button.connect("pressed", Callable(machine, "change_state").bind("MainMenu"))
-	machine.add_child(machine.main_menu)
+	machine.player = preload("res://scenes/player.tscn").instantiate()
+	machine.add_child(machine.player)
 
 func exit_state(machine: GameStateMachine) -> void:
-	machine.main_menu.queue_free()
-	machine.main_menu = null
+	machine.player.queue_free()
+	machine.player = null
 
 func process_state(_machine: GameStateMachine, _delta: float) -> void:
 	pass

@@ -3,12 +3,12 @@ extends State
 class_name MainMenu
 
 func enter_state(machine: GameStateMachine):
-	EventHandler.emit_signal("play_sound", "main_menu")
+	EventHandler.emit_signal("play_sound", "button_hover")
 
 	machine.main_menu = preload("res://scenes/main_menu.tscn").instantiate()
 	var button = machine.main_menu.get_node("Control/Button")
-	button.connect("pressed", Callable(machine, "change_state").bind("MainMenu"))
-	button.connect("mouse_entered", Callable(EventHandler, "play_sound").bind("button_hover"))
+	button.connect("pressed", Callable(machine, "change_state").bind("Playing"))
+	button.connect("mouse_entered", _button_hover)
 	machine.add_child(machine.main_menu)
 
 func exit_state(machine: GameStateMachine) -> void:
@@ -23,3 +23,6 @@ func physics_process_state(_machine: GameStateMachine, _delta: float) -> void:
 
 func input_state(_machine: GameStateMachine, _event: InputEvent) -> void:
 	pass
+
+func _button_hover() -> void:
+	EventHandler.emit_signal("play_sound", "button_hover")

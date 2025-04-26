@@ -1,15 +1,13 @@
 extends Node2D
 
-class_name GameStateMachine
+class_name PlayerStateMachine
 
 var sound_on: bool = true
 var main_menu: CanvasLayer = null
 
 var current_state: State = null
-var player: CharacterBody2D = null;
 @onready var states: Dictionary = {
-	"MainMenu": preload("res://src/game_states/main_menu.gd").new(),
-	"Playing": preload("res://src/game_states/playing.gd").new(),
+	"Idle": preload("res://src/player/idle.gd").new(),
 }
 
 var sound_player: AudioStreamPlayer = preload("res://scenes/sound_player.tscn").instantiate()
@@ -18,14 +16,13 @@ var sound_player: AudioStreamPlayer = preload("res://scenes/sound_player.tscn").
 }
 
 func _ready() -> void:
-	EventHandler.connect("play_sound", _play_sound)
-	change_state("MainMenu")
+	change_state("Idle")
 
 func change_state(state_name: String) -> void:
 	if current_state != null:
 		current_state.exit_state(self)
 	if not states.has(state_name):
-		push_error("State " + state_name + " not found")
+		push_error("Player State " + state_name + " not found")
 		return
 	current_state = states[state_name]
 	current_state.enter_state(self)
@@ -47,16 +44,3 @@ func _input(event: InputEvent) -> void:
 		return
 
 	current_state.input_state(self, event)
-
-func _play_sound(sound_name: String) -> void:
-	if not self.sound_on:
-		return
-	if not sounds.has(sound_name):
-		push_error("Sound " + sound_name + " not found")
-		return
-	if self.sound_player.is_playing():
-		return
-	#var audio_stream = self.sounds[sound_name]
-	#self.sound_player.stream = audio_stream
-	#self.sound_player.play()
-	print("playing", sound_name)

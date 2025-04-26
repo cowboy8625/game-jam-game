@@ -5,6 +5,7 @@ extends CharacterBody2D
 signal coin_collected()
 
 @export var CHEESEBURGERS = 1
+@export var HEALTH = 3
 
 const DEFAULT_WALK_SPEED = 300.0
 const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
@@ -37,9 +38,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y *= 0.6
 	# Fall.
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
-	
+
 	# each cheeseburger slows walk speed by 10 percent
-	
+
 	# 👇 Recalculate walk_speed based on current cheeseburgers
 	var current_walk_speed = DEFAULT_WALK_SPEED * (1.0 - CHEESEBURGERS * 0.05)
 	current_walk_speed = max(current_walk_speed, 50.0) # don't let it go below a minimum
@@ -66,21 +67,38 @@ func _physics_process(delta: float) -> void:
 			shoot_timer.start()
 		animation_player.play(animation)
 
+func takeDamage() -> void:
+	if HEALTH == 0:
+		die()
+	else:
+		HEALTH = HEALTH - 1
+
+
+func die() -> void:
+	#restart
+	print('restart')
 
 func get_new_animation(is_shooting := false) -> String:
 	var animation_new: String
-	if is_on_floor():
-		if absf(velocity.x) > 0.1:
-			animation_new = "run"
-		else:
-			animation_new = "idle"
-	else:
-		if velocity.y > 0.0:
-			animation_new = "falling"
-		else:
-			animation_new = "jumping"
-	if is_shooting:
-		animation_new += "_weapon"
+	# if is_on_floor():
+	#     if absf(velocity.x) > 0.1:
+	#         animation_new = "run"
+	#     else:
+	#         animation_new = "idle"
+	# else:
+	#     if velocity.y > 0.0:
+	#         animation_new = "falling"
+	#     else:
+	#         animation_new = "jumping"
+	# if is_shooting:
+	#     animation_new += "_weapon"
+
+	if CHEESEBURGERS > 20: return 'fattest'
+	if CHEESEBURGERS > 15: return 'fat'
+	if CHEESEBURGERS > 10: return 'normal'
+	if CHEESEBURGERS > 5: return 'skinny'
+	if CHEESEBURGERS > 0: return 'skinniest'
+
 	return animation_new
 
 
@@ -93,9 +111,9 @@ func try_jump() -> void:
 		jump_sound.pitch_scale = 1.5
 	else:
 		return
-	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 10)
+	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 20)
 	jump_sound.play()
-	
+
 func scale_player(factor: float) -> void:
 	$Sprite2D.scale *= factor
 

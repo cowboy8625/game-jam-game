@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 class_name PlayerStateMachine
 
@@ -9,6 +9,9 @@ var current_state: State = null
 @onready var states: Dictionary = {
 	"Idle": preload("res://src/player/idle.gd").new(),
 }
+
+const SPEED = 1000.0
+const JUMP_VELOCITY = -350.0
 
 var sound_player: AudioStreamPlayer = preload("res://scenes/sound_player.tscn").instantiate()
 @onready var sounds: Dictionary = {
@@ -44,3 +47,5 @@ func _input(event: InputEvent) -> void:
 		return
 
 	current_state.input_state(self, event)
+	velocity = Vector2(Input.get_axis("left", "right") * SPEED, 0)
+	move_and_slide()

@@ -5,6 +5,7 @@ extends CharacterBody2D
 signal coin_collected()
 
 @export var CHEESEBURGERS = 1
+@export var HEALTH = 3
 
 const DEFAULT_WALK_SPEED = 300.0
 const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
@@ -66,6 +67,16 @@ func _physics_process(delta: float) -> void:
 			shoot_timer.start()
 		animation_player.play(animation)
 
+func takeDamage() -> void:
+	if HEALTH == 0:
+		die()
+	else:
+		HEALTH = HEALTH - 1
+
+
+func die() -> void:
+	#restart
+	print('restart')
 
 func get_new_animation(is_shooting := false) -> String:
 	var animation_new: String

@@ -6,8 +6,8 @@ signal coin_collected()
 
 @export var CHEESEBURGERS = 1
 
-const WALK_SPEED = 300.0
-const ACCELERATION_SPEED = WALK_SPEED * 6.0
+const DEFAULT_WALK_SPEED = 300.0
+const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
 const JUMP_VELOCITY = -725.0
 ## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 700
@@ -37,8 +37,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y *= 0.6
 	# Fall.
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
+	
+	# each cheeseburger slows walk speed by 10 percent
+	
+	# 👇 Recalculate walk_speed based on current cheeseburgers
+	var current_walk_speed = DEFAULT_WALK_SPEED * (1.0 - CHEESEBURGERS * 0.05)
+	current_walk_speed = max(current_walk_speed, 50.0) # don't let it go below a minimum
 
-	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
+	var direction : float = Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * current_walk_speed
 	velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
 
 	if not is_zero_approx(velocity.x):

@@ -50,9 +50,9 @@ func _physics_process(delta: float) -> void:
 
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
-			sprite.scale.x = 1.0
+			sprite.scale.x = abs(sprite.scale.x)
 		else:
-			sprite.scale.x = -1.0
+			sprite.scale.x = -abs(sprite.scale.x)
 
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
@@ -93,10 +93,10 @@ func get_new_animation(is_shooting := false) -> String:
 	# if is_shooting:
 	#     animation_new += "_weapon"
 
-	if CHEESEBURGERS > 20: return 'fattest'
-	if CHEESEBURGERS > 15: return 'fat'
-	if CHEESEBURGERS > 10: return 'normal'
-	if CHEESEBURGERS > 5: return 'skinny'
+	if CHEESEBURGERS > 8: return 'fattest'
+	if CHEESEBURGERS > 6: return 'fat'
+	if CHEESEBURGERS > 4: return 'normal'
+	if CHEESEBURGERS > 2: return 'skinny'
 	if CHEESEBURGERS > 0: return 'skinniest'
 
 	return animation_new
@@ -104,11 +104,11 @@ func get_new_animation(is_shooting := false) -> String:
 
 func try_jump() -> void:
 	if is_on_floor():
-		jump_sound.pitch_scale = 1.0
+		jump_sound.pitch_scale = 1.0 * (1.0 - CHEESEBURGERS * 0.1)
 	elif _double_jump_charged:
 		_double_jump_charged = false
 		velocity.x *= 2.5
-		jump_sound.pitch_scale = 1.5
+		jump_sound.pitch_scale = 1.5 * (1.0 - CHEESEBURGERS * 0.1)
 	else:
 		return
 	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 20)

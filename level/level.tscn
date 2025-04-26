@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://ctgumjaytuoch"]
+[gd_scene load_steps=25 format=4 uid="uid://ctgumjaytuoch"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
@@ -17,13 +17,14 @@
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="18"]
 [ext_resource type="Texture2D" uid="uid://c5xpotfxdi0ms" path="res://level/props/fern_1.webp" id="19"]
 [ext_resource type="Texture2D" uid="uid://crfy1osk1c1gc" path="res://level/props/ground_flowers_1.webp" id="20"]
+[ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_kp5pi"]
 [ext_resource type="Texture2D" uid="uid://bvu4vgnc84r84" path="res://level/props/vine_1.webp" id="21"]
 [ext_resource type="Texture2D" uid="uid://bu54lwrkcng25" path="res://level/props/vine_2.webp" id="22"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "move"
 length = 4.0
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1289,12 +1290,12 @@ position = Vector2(60, 0)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("3")]
 z_index = 0
-position = Vector2(707, 400)
+position = Vector2(800, 336.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
 callback_mode_process = 0
 libraries = {
-"": SubResource("AnimationLibrary_knmjc")
+&"": SubResource("AnimationLibrary_knmjc")
 }
 autoplay = "move"
 
@@ -1304,7 +1305,7 @@ position = Vector2(-28, 645)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 callback_mode_process = 0
 libraries = {
-"": SubResource("AnimationLibrary_frb4n")
+&"": SubResource("AnimationLibrary_frb4n")
 }
 autoplay = "move"
 
@@ -1724,3 +1725,6 @@ z_index = -2
 position = Vector2(72, 639)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17")
+
+[node name="Ozempic" parent="." instance=ExtResource("20_kp5pi")]
+position = Vector2(277, 556)

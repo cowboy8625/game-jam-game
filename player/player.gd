@@ -89,3 +89,12 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 10)
 	jump_sound.play()
+	
+func scale_player(factor: float) -> void:
+	$Sprite2D.scale *= factor
+
+	var shape = $CollisionShape2D.shape
+	if shape is RectangleShape2D:
+		shape.extents *= factor
+	elif shape is CircleShape2D:
+		shape.radius *= factor

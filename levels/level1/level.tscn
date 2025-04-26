@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://ctgumjaytuoch"]
+[gd_scene load_steps=27 format=4 uid="uid://ctgumjaytuoch"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_48gma"]
+[ext_resource type="Script" uid="uid://0fdjo32eojga" path="res://levels/level1/level.gd" id="1_d2ejs"]
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="2_d2ejs"]
 [ext_resource type="Texture2D" uid="uid://upfcr5xg5fvh" path="res://level/props/grass_3.webp" id="3_3r5fn"]
 [ext_resource type="Texture2D" uid="uid://bju7r7jqn8bqy" path="res://level/props/grass_2.webp" id="4_f8yee"]
@@ -64,8 +65,11 @@ _data = {
 &"move": SubResource("2")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r5fn"]
+
 [node name="Level" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_d2ejs")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -1726,17 +1730,28 @@ position = Vector2(72, 639)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_hlbc5")
 
-[node name="Ozempic" parent="." instance=ExtResource("20_u64n8")]
+[node name="Ozempic" type="Node" parent="."]
+
+[node name="Ozempic" parent="Ozempic" instance=ExtResource("20_u64n8")]
 position = Vector2(96, 286)
 
-[node name="Ozempic2" parent="." instance=ExtResource("20_u64n8")]
+[node name="Ozempic2" parent="Ozempic" instance=ExtResource("20_u64n8")]
 position = Vector2(-160, 219)
 
-[node name="Ozempic3" parent="." instance=ExtResource("20_u64n8")]
+[node name="Ozempic3" parent="Ozempic" instance=ExtResource("20_u64n8")]
 position = Vector2(474, 161)
 
-[node name="Ozempic4" parent="." instance=ExtResource("20_u64n8")]
+[node name="Ozempic4" parent="Ozempic" instance=ExtResource("20_u64n8")]
 position = Vector2(612, 66)
 
-[node name="Ozempic5" parent="." instance=ExtResource("20_u64n8")]
+[node name="Ozempic5" parent="Ozempic" instance=ExtResource("20_u64n8")]
 position = Vector2(60, 105)
+
+[node name="GoToLevel2" type="Area2D" parent="."]
+position = Vector2(1352, -8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToLevel2"]
+shape = SubResource("RectangleShape2D_3r5fn")
+
+[connection signal="body_entered" from="GoToLevel2" to="." method="_on_go_to_level_2_body_entered"]

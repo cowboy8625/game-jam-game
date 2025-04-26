@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=4 uid="uid://c6h7d5ku2m6jj"]
+
+[ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_7y2jb"]
+[ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="11_wpoba"]
+[ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_q8nuc"]
+[ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_sbopp"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD0/wAABwAAAAAAAQAWAAAABwAAAAAAAAD0/wEABwAAAAAAAQAWAAEABwAAAAAAAAD0/wIABwAAAAAAAQAWAAIABwAAAAAAAAD0/wMABwAAAAAAAQAWAAMABwAAAAAAAAD0/wQABwAAAAAAAQAWAAQABwAAAAAAAAD0/wUABwAAAAAAAQAWAAUABwAAAAAAAAD0/wYABwAAAAAAAQAWAAYABwAAAAAAAAD0/wcABwAAAAAAAQAWAAcABwAAAAAAAAD0/wgABwAAAAAAAQAWAAgABwAAAAAAAAD0/wkABwAAAAAAAQAWAAkABwAAAAAAAAD0/woABwAAAAAAAQAWAAoABwAAAAAAAAD0/wsABwAAAAAAAQD1/wsABgAAAAAAAAD2/wsABgAAAAAAAAD3/wsABgAAAAAAAAD4/wsABgAAAAAAAAD5/wsABgAAAAAAAAD6/wsABgAAAAAAAAD7/wsABgAAAAAAAAD8/wsABgAAAAAAAAD9/wsABgAAAAAAAAD+/wsABgAAAAAAAAD//wsABgAAAAAAAAAAAAsAEgAAAAAAAAABAAsABgAAAAAAAAACAAsAEgAAAAAAAAADAAsABgAAAAAAAAAEAAsAEgAAAAAAAAAFAAsABgAAAAAAAAAGAAsABgAAAAAAAAAHAAsABgAAAAAAAAAIAAsAEgAAAAAAAQAJAAsAEgAAAAAAAAAKAAsABgAAAAAAAAALAAsABgAAAAAAAAAMAAsAEgAAAAAAAQANAAsABgAAAAAAAAAOAAsABgAAAAAAAQAPAAsABgAAAAAAAQAQAAsABgAAAAAAAAARAAsABgAAAAAAAAASAAsABgAAAAAAAAATAAsABgAAAAAAAAAUAAsABgAAAAAAAAAVAAsABgAAAAAAAAAWAAsABwAAAAAAAAD0/wwABwAAAAAAAQD1/wwABgAAAAAAAAD2/wwABgAAAAAAAAD3/wwABgAAAAAAAAD4/wwABgAAAAAAAAD5/wwABgAAAAAAAAD6/wwABgAAAAAAAAD7/wwABgAAAAAAAAD8/wwADgAAAAAAAQD9/wwADgAAAAAAAQD+/wwADgAAAAAAAAD//wwADgAAAAAAAAAAAAwADgAAAAAAAAABAAwADgAAAAAAAAACAAwADgAAAAAAAAADAAwADgAAAAAAAAAEAAwADgAAAAAAAAAFAAwAEgAAAAAAAAAGAAwADgAAAAAAAAAHAAwADgAAAAAAAAAIAAwADgAAAAAAAAAJAAwADgAAAAAAAAAKAAwADgAAAAAAAAALAAwADgAAAAAAAAAMAAwADgAAAAAAAAANAAwADgAAAAAAAAAOAAwABgAAAAAAAQAPAAwABgAAAAAAAQAQAAwABgAAAAAAAAARAAwABgAAAAAAAAASAAwABgAAAAAAAAATAAwABgAAAAAAAAAUAAwABgAAAAAAAAAVAAwABgAAAAAAAAAWAAwABwAAAAAAAAD0//X/AgAAAAAAAQAWAPX/AgAAAAAAAAAWAP//BwAAAAAAAAAWAP7/BwAAAAAAAAAWAP3/BwAAAAAAAAAWAPz/BwAAAAAAAAAWAPv/BwAAAAAAAAAWAPr/BwAAAAAAAAAWAPn/BwAAAAAAAAAWAPj/BwAAAAAAAAAWAPf/BwAAAAAAAAAWAPb/BwAAAAAAAAD0//b/BwAAAAAAAQD0//f/BwAAAAAAAQD0//j/BwAAAAAAAQD0//n/BwAAAAAAAQD0//r/BwAAAAAAAQD0//v/BwAAAAAAAQD0//z/BwAAAAAAAQD0//3/BwAAAAAAAQD0//7/BwAAAAAAAQD0////BwAAAAAAAQA=")
+tile_set = ExtResource("1_7y2jb")
+rendering_quadrant_size = 32
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="CoinsHorizontal1" type="Node2D" parent="Coins"]
+position = Vector2(700, 610)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsHorizontal1" instance=ExtResource("11_wpoba")]
+position = Vector2(30, 0)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal1" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsHorizontal3" type="Node2D" parent="Coins"]
+position = Vector2(154, 43)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+position = Vector2(30, 0)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsHorizontal2" type="Node2D" parent="Coins"]
+position = Vector2(200, 610)
+
+[node name="Coin" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+position = Vector2(30, 0)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsArc1" type="Node2D" parent="Coins"]
+position = Vector2(307, 594)
+
+[node name="Coin" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+position = Vector2(30, -10)
+
+[node name="Coin3" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsArc2" type="Node2D" parent="Coins"]
+position = Vector2(453, 332)
+
+[node name="Coin" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+position = Vector2(30, -10)
+
+[node name="Coin3" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsArc4" type="Node2D" parent="Coins"]
+position = Vector2(122, 406)
+
+[node name="Coin" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+position = Vector2(30, -10)
+
+[node name="Coin3" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="CoinsArc3" type="Node2D" parent="Coins"]
+position = Vector2(594, 332)
+
+[node name="Coin" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+position = Vector2(30, -10)
+
+[node name="Coin3" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("15_q8nuc")]
+
+[node name="Ozempic" type="Node" parent="."]
+
+[node name="Ozempic" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(96, 286)
+
+[node name="Ozempic2" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(-160, 219)
+
+[node name="Ozempic3" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(474, 161)
+
+[node name="Ozempic4" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(612, 66)
+
+[node name="Ozempic5" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(60, 105)

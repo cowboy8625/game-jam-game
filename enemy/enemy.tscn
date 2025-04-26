@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6mtip3ruyn"]
+[gd_scene load_steps=16 format=3 uid="uid://6mtip3ruyn"]
 
 [ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://player/bullet.webp" id="1"]
 [ext_resource type="AudioStream" uid="uid://duwm7i44o75o2" path="res://enemy/explode.wav" id="2"]
@@ -248,6 +248,17 @@ blend_mode = 1
 offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
+[sub_resource type="GDScript" id="GDScript_pmsee"]
+script/source = "extends Area2D
+
+
+func _on_body_entered(body: Node) -> void:
+	print(\"Body Entered:\", body)
+	if body.name == \"Player\":
+		print('stuffd')
+		body.takeDamage()
+"
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 24
@@ -278,7 +289,7 @@ vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0kjfc")
+&"": SubResource("AnimationLibrary_0kjfc")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -290,12 +301,12 @@ self_modulate = Color(1, 1, 1, 0.12)
 material = SubResource("6")
 emitting = false
 amount = 32
+texture = ExtResource("1")
 lifetime = 0.5
 one_shot = true
 speed_scale = 1.2
 explosiveness = 0.7
 draw_order = 215832976
-texture = ExtResource("1")
 emission_shape = 1
 emission_sphere_radius = 16.0
 spread = 180.0
@@ -307,3 +318,14 @@ stream = ExtResource("3")
 
 [node name="Explode" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2")
+
+[node name="EnemyArea" type="Area2D" parent="."]
+collision_mask = 15
+script = SubResource("GDScript_pmsee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
+rotation = -1.5708
+shape = SubResource("5")
+
+[connection signal="area_entered" from="EnemyArea" to="EnemyArea" method="_on_area_entered"]
+[connection signal="body_entered" from="EnemyArea" to="EnemyArea" method="_on_body_entered"]

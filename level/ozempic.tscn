@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjpij78tbf0qh"]
+[gd_scene load_steps=4 format=3 uid="uid://cjpij78tbf0qh"]
 
-[ext_resource type="Texture2D" uid="uid://bi5cse7d4spxa" path="res://icon.webp" id="1_cse2k"]
+[ext_resource type="Script" uid="uid://bsh5tdirp6vvf" path="res://level/ozempic.gd" id="1_kip0c"]
+[ext_resource type="Texture2D" uid="uid://cacycbehdddxu" path="res://level/syringe2.png" id="2_sx3is"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kip0c"]
-radius = 61.0328
+radius = 23.0868
 
 [node name="Ozempic" type="Area2D"]
+script = ExtResource("1_kip0c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kip0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, 0)
-texture = ExtResource("1_cse2k")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_sx3is")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

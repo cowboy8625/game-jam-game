@@ -3,12 +3,12 @@ extends State
 class_name Playing
 
 func enter_state(machine: GameStateMachine):
-	machine.player = preload("res://scenes/player.tscn").instantiate()
-	machine.add_child(machine.player)
+	machine.level = preload("res://scenes/levels/level1.tscn").instantiate()
+	machine.add_child(machine.level)
 
 func exit_state(machine: GameStateMachine) -> void:
-	machine.player.queue_free()
-	machine.player = null
+	machine.level.queue_free()
+	machine.level = null
 
 func process_state(_machine: GameStateMachine, _delta: float) -> void:
 	pass

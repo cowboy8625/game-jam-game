@@ -6,7 +6,7 @@ var sound_on: bool = true
 var main_menu: CanvasLayer = null
 
 var current_state: State = null
-var player: CharacterBody2D = null;
+var level: Node2D = null;
 @onready var states: Dictionary = {
 	"MainMenu": preload("res://src/game_states/main_menu.gd").new(),
 	"Playing": preload("res://src/game_states/playing.gd").new(),

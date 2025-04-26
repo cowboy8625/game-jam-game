@@ -9,7 +9,7 @@ var current_state: State = null
 var current_level: Node = null
 @onready var player: CharacterBody2D = preload("res://player/player.tscn").instantiate()
 @onready var states: Dictionary = {
-	"Level1": preload("res://levels/level1/level1_state.gd").new(),
+	"Level1": preload("res://levels/level1/state.gd").new(),
 }
 
 func _ready() -> void:

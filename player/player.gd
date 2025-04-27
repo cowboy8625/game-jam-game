@@ -10,97 +10,99 @@ signal coin_collected()
 const DEFAULT_WALK_SPEED = 300.0
 const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
 const JUMP_VELOCITY = -725.0
-## Maximum speed at which the player can fall.
 const TERMINAL_VELOCITY = 700
 
-## The player listens for input actions appended with this suffix.[br]
-## Used to separate controls for multiple players in splitscreen.
 @export var action_suffix := ""
 
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
-@onready var animation_player := $AnimationPlayer as AnimationPlayer
+@onready var animated_sprite = $AnimatedSprite2D as AnimatedSprite2D
 @onready var shoot_timer := $ShootAnimation as Timer
-@onready var sprite := $Sprite2D as Sprite2D
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
-@onready var gun: Gun = sprite.get_node(^"Gun")
+@onready var gun: Gun = animated_sprite.get_node(^"Gun")
 @onready var camera := $Camera as Camera2D
 var _double_jump_charged := false
 
+func _ready():
+	# Ensure the animation is stopped at the start
+	animated_sprite.stop()
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_double_jump_charged = true
+
 	if Input.is_action_just_pressed("jump" + action_suffix):
 		try_jump()
 	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
-		# The player let go of jump early, reduce vertical momentum.
 		velocity.y *= 0.6
-	# Fall.
+
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
-	# each cheeseburger slows walk speed by 10 percent
-
-	# 👇 Recalculate walk_speed based on current cheeseburgers
+	# Recalculate walk_speed based on current cheeseburgers
 	var current_walk_speed = DEFAULT_WALK_SPEED * (1.0 - CHEESEBURGERS * 0.05)
-	current_walk_speed = max(current_walk_speed, 50.0) # don't let it go below a minimum
+	current_walk_speed = max(current_walk_speed, 50.0)  # don't let it go below a minimum
 
 	var direction : float = Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * current_walk_speed
 	velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
 
+	var animation := get_new_animation()
+
+	# Handle horizontal flip and animation
 	if not is_zero_approx(velocity.x):
+		# Play the running animation
+		play_animation(animation)
 		if velocity.x > 0.0:
-			sprite.scale.x = abs(sprite.scale.x)
+			animated_sprite.flip_h = false  # Face right
 		else:
-			sprite.scale.x = -abs(sprite.scale.x)
+			animated_sprite.flip_h = true  # Face left
+	else:
+		# When idle, play the idle animation
+		var idleAnimation = get_new_animation(false, true)
+		play_animation(idleAnimation)
 
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
 
+	# Handle shooting action
 	var is_shooting := false
 	if Input.is_action_just_pressed("shoot" + action_suffix):
-		is_shooting = gun.shoot(sprite.scale.x)
+		is_shooting = gun.shoot(animated_sprite.flip_h)
 
-	var animation := get_new_animation(is_shooting)
-	if animation != animation_player.current_animation and shoot_timer.is_stopped():
-		if is_shooting:
-			shoot_timer.start()
-		animation_player.play(animation)
+func play_animation(animation_name: String):
+	if animated_sprite.animation != animation_name:
+		animated_sprite.play(animation_name)
 
 func takeDamage() -> void:
 	if HEALTH == 0:
 		die()
 	else:
-		HEALTH = HEALTH - 1
-
+		HEALTH -= 1
 
 func die() -> void:
-	#restart
+	# Restart
 	print('restart')
 
-func get_new_animation(is_shooting := false) -> String:
+func get_new_animation(is_shooting := false, isIdle := false) -> String:
 	var animation_new: String
-	# if is_on_floor():
-	#     if absf(velocity.x) > 0.1:
-	#         animation_new = "run"
-	#     else:
-	#         animation_new = "idle"
-	# else:
-	#     if velocity.y > 0.0:
-	#         animation_new = "falling"
-	#     else:
-	#         animation_new = "jumping"
-	# if is_shooting:
-	#     animation_new += "_weapon"
 
-	if CHEESEBURGERS > 8: return 'fattest'
-	if CHEESEBURGERS > 6: return 'fat'
-	if CHEESEBURGERS > 4: return 'normal'
-	if CHEESEBURGERS > 2: return 'skinny'
-	if CHEESEBURGERS > 0: return 'skinniest'
+	if CHEESEBURGERS > 8:
+		animation_new = 'fattest'
+	elif CHEESEBURGERS > 6:
+		animation_new = 'fat'
+	elif CHEESEBURGERS > 4:
+		animation_new = 'normal'
+	elif CHEESEBURGERS > 2:
+		animation_new = 'skinny'
+	elif CHEESEBURGERS > 0:
+		animation_new = 'skinniest'
+	else:
+		animation_new = 'idle'  # Default to idle if no condition matches
+
+	# Append 'Idle' if the player is idle
+	if isIdle:
+		animation_new += 'Idle'
 
 	return animation_new
-
 
 func try_jump() -> void:
 	if is_on_floor():
@@ -115,7 +117,7 @@ func try_jump() -> void:
 	jump_sound.play()
 
 func scale_player(factor: float) -> void:
-	$Sprite2D.scale *= factor
+	$AnimatedSprite2D.scale *= factor
 
 	var shape = $CollisionShape2D.shape
 	if shape is RectangleShape2D:

@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://deb4s31ja1uym" path="res://levels/level3/state.gd" id="1_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="1_u0ihp"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="2_8g3kn"]
-[ext_resource type="PackedScene" path="res://tile_map_layer.tscn" id="3_m04y6"]
+[ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="3_m04y6"]
 [ext_resource type="PackedScene" uid="uid://bskjm24nv6s3b" path="res://bridge/bridge.tscn" id="4_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="7_m3v00"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="8_gdchn"]
 [ext_resource type="PackedScene" uid="uid://glxgat4eje5g" path="res://level/coin.tscn" id="8_lfyeg"]
-[ext_resource type="Script" uid="uid://ce47ydcl7k65m" path="res://level/coin.gd" id="9_h11q8"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="10_kgy1m"]
+[ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="10_lfyeg"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_8g3kn")
 
 [node name="Player" parent="." instance=ExtResource("1_u0ihp")]
@@ -32,132 +32,6 @@ position = Vector2(1, 772)
 [node name="Bridge2" parent="." instance=ExtResource("4_8g3kn")]
 position = Vector2(960, 839)
 
-[node name="Ozempic6" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(-130, 745)
-
-[node name="Ozempic7" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(696, 1573)
-
-[node name="Ozempic8" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(802, 738)
-
-[node name="Ozempic9" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(399, 282)
-
-[node name="Ozempic10" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(817, 472)
-
-[node name="Ozempic11" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(417, 1188)
-
-[node name="CoinsHorizontal1" type="Node2D" parent="."]
-position = Vector2(465, 616)
-
-[node name="Coin" parent="CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
-position = Vector2(-151, 73)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
-position = Vector2(-364, 129)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
-position = Vector2(110, 1)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal2" type="Node2D" parent="."]
-position = Vector2(697, 623)
-
-[node name="Coin" parent="CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
-position = Vector2(589, 71)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
-position = Vector2(452, 132)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
-position = Vector2(349, 193)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal3" type="Node2D" parent="."]
-position = Vector2(695, 614)
-
-[node name="Coin" parent="CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
-position = Vector2(-28, -305)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
-position = Vector2(139, -305)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
-position = Vector2(224, -114)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal4" type="Node2D" parent="."]
-position = Vector2(715, 611)
-
-[node name="Coin" parent="CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
-position = Vector2(435, -122)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
-position = Vector2(-380, 323)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
-position = Vector2(-222, 394)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal5" type="Node2D" parent="."]
-position = Vector2(700, 610)
-
-[node name="Coin" parent="CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
-position = Vector2(603, -243)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
-position = Vector2(502, -239)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
-position = Vector2(371, -307)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal6" type="Node2D" parent="."]
-position = Vector2(700, 610)
-
-[node name="Coin" parent="CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
-position = Vector2(-549, -368)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
-position = Vector2(598, -378)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
-position = Vector2(-431, -123)
-script = ExtResource("9_h11q8")
-
-[node name="CoinsHorizontal7" type="Node2D" parent="."]
-position = Vector2(700, 610)
-
-[node name="Coin" parent="CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
-position = Vector2(-543, -120)
-script = ExtResource("9_h11q8")
-
-[node name="Coin2" parent="CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
-position = Vector2(-890, -190)
-script = ExtResource("9_h11q8")
-
-[node name="Coin3" parent="CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
-position = Vector2(171, 946)
-script = ExtResource("9_h11q8")
-
-[node name="Ozempic12" parent="." instance=ExtResource("8_gdchn")]
-position = Vector2(181, 876)
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("10_kgy1m")]
@@ -175,5 +49,116 @@ position = Vector2(196, 233)
 [node name="Enemy5" parent="Enemies" instance=ExtResource("10_kgy1m")]
 z_index = 2
 position = Vector2(0, 1571)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("10_lfyeg")]
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="CoinsHorizontal1" type="Node2D" parent="Coins"]
+position = Vector2(465, 616)
+
+[node name="Coin" parent="Coins/CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
+position = Vector2(-151, 73)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
+position = Vector2(-364, 129)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal1" instance=ExtResource("8_lfyeg")]
+position = Vector2(110, 1)
+
+[node name="CoinsHorizontal2" type="Node2D" parent="Coins"]
+position = Vector2(697, 623)
+
+[node name="Coin" parent="Coins/CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
+position = Vector2(589, 71)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
+position = Vector2(452, 132)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal2" instance=ExtResource("8_lfyeg")]
+position = Vector2(349, 193)
+
+[node name="CoinsHorizontal3" type="Node2D" parent="Coins"]
+position = Vector2(695, 614)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
+position = Vector2(-28, -305)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
+position = Vector2(139, -305)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
+position = Vector2(224, -114)
+
+[node name="CoinsHorizontal4" type="Node2D" parent="Coins"]
+position = Vector2(715, 611)
+
+[node name="Coin" parent="Coins/CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
+position = Vector2(435, -122)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
+position = Vector2(-380, 323)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal4" instance=ExtResource("8_lfyeg")]
+position = Vector2(-222, 394)
+
+[node name="CoinsHorizontal5" type="Node2D" parent="Coins"]
+position = Vector2(700, 610)
+
+[node name="Coin" parent="Coins/CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
+position = Vector2(603, -243)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
+position = Vector2(502, -239)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
+position = Vector2(371, -307)
+
+[node name="CoinsHorizontal6" type="Node2D" parent="Coins"]
+position = Vector2(700, 610)
+
+[node name="Coin" parent="Coins/CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
+position = Vector2(-549, -368)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
+position = Vector2(598, -378)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal6" instance=ExtResource("8_lfyeg")]
+position = Vector2(-431, -123)
+
+[node name="CoinsHorizontal7" type="Node2D" parent="Coins"]
+position = Vector2(700, 610)
+
+[node name="Coin" parent="Coins/CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
+position = Vector2(-543, -120)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
+position = Vector2(-890, -190)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
+position = Vector2(171, 946)
+
+[node name="Ozempic" type="Node" parent="."]
+
+[node name="Ozempic6" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(-130, 745)
+
+[node name="Ozempic7" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(696, 1573)
+
+[node name="Ozempic8" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(802, 738)
+
+[node name="Ozempic9" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(399, 282)
+
+[node name="Ozempic10" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(817, 472)
+
+[node name="Ozempic11" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(417, 1188)
+
+[node name="Ozempic12" parent="Ozempic" instance=ExtResource("8_gdchn")]
+position = Vector2(181, 876)
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

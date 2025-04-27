@@ -7,6 +7,9 @@ var main_menu: CanvasLayer = null
 
 var current_state: State = null
 var current_level: Node = null
+var player_stats: Dictionary = {
+	"cheese_burger_count": 0,
+}
 
 @onready var states: Dictionary = {
 	"Level1": preload("res://levels/level1/state.gd").new(),

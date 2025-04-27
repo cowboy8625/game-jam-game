@@ -11,7 +11,7 @@ func exit_state(machine: GameStateMachine) -> void:
 	var player = machine.current_level.get_node("Player")
 	player.get_parent().remove_child(player)
 	machine.current_level.queue_free()
-	print(player)
+	machine.player_stats["cheese_burger_count"] = player.CHEESEBURGERS
 
 func process_state(_machine: GameStateMachine, _delta: float) -> void:
 	pass

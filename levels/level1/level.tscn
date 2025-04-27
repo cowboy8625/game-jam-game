@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://b1r1scdy1dltr"]
+[gd_scene load_steps=29 format=4 uid="uid://b1r1scdy1dltr"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_48gma"]
+[ext_resource type="Script" uid="uid://bew2bet5vxbfy" path="res://levels/level1/state.gd" id="1_f8yee"]
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="2_d2ejs"]
 [ext_resource type="Texture2D" uid="uid://upfcr5xg5fvh" path="res://level/props/grass_3.webp" id="3_3r5fn"]
 [ext_resource type="Texture2D" uid="uid://bju7r7jqn8bqy" path="res://level/props/grass_2.webp" id="4_f8yee"]
@@ -70,6 +71,7 @@ _data = {
 
 [node name="Level" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_f8yee")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true

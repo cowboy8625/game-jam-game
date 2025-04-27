@@ -83,33 +83,6 @@ position = Vector2(695, 614)
 [node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
 position = Vector2(-28, -310)
 
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(-26, -1)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(-26, 1)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(188, -12)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(65, -1)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(180, 7)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(74, -2)
-
-[node name="Coin2" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(211, -65)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin/Coin2" instance=ExtResource("8_lfyeg")]
-position = Vector2(74, -2)
-
-[node name="Coin3" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
-position = Vector2(417, -384)
-
 [node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
 position = Vector2(138, -318)
 
@@ -163,6 +136,33 @@ position = Vector2(-890, -190)
 
 [node name="Coin3" parent="Coins/CoinsHorizontal7" instance=ExtResource("8_lfyeg")]
 position = Vector2(171, 946)
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_lfyeg")]
+position = Vector2(641, 303)
+
+[node name="Coin" parent="Coins/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(-26, 1)
+
+[node name="Coin" parent="Coins/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(188, -12)
+
+[node name="Coin" parent="Coins/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(65, -1)
+
+[node name="Coin" parent="Coins/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(180, 7)
+
+[node name="Coin" parent="Coins/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(74, -2)
+
+[node name="Coin2" parent="Coins/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(211, -65)
+
+[node name="Coin" parent="Coins/Coin/Coin/Coin/Coin/Coin/Coin2" instance=ExtResource("8_lfyeg")]
+position = Vector2(74, -2)
+
+[node name="Coin3" parent="Coins/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(417, -384)
 
 [node name="Ozempic" type="Node" parent="."]
 

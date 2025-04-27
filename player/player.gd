@@ -23,6 +23,8 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var gun: Gun = animated_sprite.get_node(^"Gun")
 @onready var camera := $Camera as Camera2D
 @onready var StateMachine := self.get_parent().get_parent()
+@onready var tshirtSizeUi := get_node("/root/GameStateMachine/Level/TshirtSize")
+
 var _double_jump_charged := false
 
 func _ready():
@@ -141,6 +143,15 @@ enum TshirtSize {
 	XL = 4
 }
 
+func get_enum_key(enum_type: Dictionary, value: int) -> String:
+	for key in enum_type.keys():
+		if enum_type[key] == value:
+			return key
+	return ""
+
+func get_shirt_size_name() -> String:
+	return get_enum_key(TshirtSize, TSHIRTSIZE)
+
 func set_tshirt_size() -> void:
 	if CHEESEBURGERS > 8:
 		TSHIRTSIZE = TshirtSize.XL
@@ -152,3 +163,6 @@ func set_tshirt_size() -> void:
 		TSHIRTSIZE = TshirtSize.S
 	else:
 		TSHIRTSIZE = TshirtSize.XS
+		
+	if tshirtSizeUi:	
+		tshirtSizeUi.updateSize()

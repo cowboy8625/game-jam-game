@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd7jes78gduo2"]
+
+[ext_resource type="Script" uid="uid://lsgd8n50veax" path="res://gui/tshirt_size.gd" id="1_g227i"]
+[ext_resource type="Texture2D" uid="uid://comgcyx64sbpm" path="res://gui/shirt-min.png" id="1_h74sb"]
+
+[node name="TshirtSize" type="CanvasLayer"]
+script = ExtResource("1_g227i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_bottom = 36.0
+grow_horizontal = 0
+size_flags_stretch_ratio = 7.13
+tooltip_text = "Tee Shirt Size (this effects your speed and other things you can do)"
+
+[node name="Sprite2D" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_h74sb")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "XL"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

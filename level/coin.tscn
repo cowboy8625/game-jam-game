@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://glxgat4eje5g"]
+[gd_scene load_steps=8 format=3 uid="uid://glxgat4eje5g"]
 
 [ext_resource type="Texture2D" uid="uid://mdduqsfirm2q" path="res://level/burger.png" id="2_jvvep"]
-[ext_resource type="Script" path="res://level/burger.gd" id="4"]
 [ext_resource type="AudioStream" uid="uid://7nxca67tjcol" path="res://player/chomp-155392.mp3" id="4_unj5s"]
 
 [sub_resource type="Animation" id="Animation_4kkvr"]
@@ -167,7 +166,6 @@ radius = 10.0499
 [node name="Coin" type="Area2D"]
 collision_layer = 0
 monitorable = false
-script = ExtResource("4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.65, 0.65)

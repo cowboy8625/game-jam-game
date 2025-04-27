@@ -8,7 +8,10 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	animation_player.play(&"picked")
-	(body as Player).CHEESEBURGERS = max(body.CHEESEBURGERS - 5, 0)
+
+	if not (body is Player):
+		return
+
+	(body as Player).CHEESEBURGERS = body.CHEESEBURGERS - 5
 	(body as Player).scale_player(0.9)
 	queue_free()
-	

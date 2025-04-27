@@ -1,97 +1,172 @@
-[gd_scene load_steps=13 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=24 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Texture2D" uid="uid://u8xe77xjav5o" path="res://player/human.png" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://3kovi8hshvar" path="res://player/player.gd" id="3"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://player/jump.wav" id="5"]
 [ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://player/shoot.wav" id="6"]
+[ext_resource type="Texture2D" uid="uid://7uipk6b4ryu7" path="res://player/otherhuman.png" id="6_g6k8r"]
 [ext_resource type="Script" uid="uid://c3cm5mpl2xelv" path="res://player/gun.gd" id="8"]
-
-[sub_resource type="Animation" id="Animation_hg6s5"]
-resource_name = "fat"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
-[sub_resource type="Animation" id="Animation_8t03j"]
-resource_name = "fattest"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
-[sub_resource type="Animation" id="Animation_rgyib"]
-resource_name = "normal"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_qjkh3"]
-resource_name = "skinniest"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_g6k8r"]
-resource_name = "skinny"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnr5f"]
-_data = {
-&"fat": SubResource("Animation_hg6s5"),
-&"fattest": SubResource("Animation_8t03j"),
-&"normal": SubResource("Animation_rgyib"),
-&"skinniest": SubResource("Animation_qjkh3"),
-&"skinny": SubResource("Animation_g6k8r")
-}
 
 [sub_resource type="RectangleShape2D" id="11"]
 size = Vector2(42.5, 54.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(126, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgyib"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(189, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(126, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(126, 60, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(189, 60, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqiix"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(126, 60, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 120, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebec5"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(63, 120, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7oew"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 120, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb6p2"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(63, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c35mf"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 0, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wodsf"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 60, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32hag"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(63, 60, 63, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65viv"]
+atlas = ExtResource("6_g6k8r")
+region = Rect2(0, 60, 63, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqiix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boad6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgyib")
+}],
+"loop": true,
+"name": &"fat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6k8r")
+}],
+"loop": true,
+"name": &"fatIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg6s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t03j")
+}],
+"loop": true,
+"name": &"fattest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqiix")
+}],
+"loop": true,
+"name": &"fattestIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ieo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebec5")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7oew")
+}],
+"loop": true,
+"name": &"normalIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yllr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb6p2")
+}],
+"loop": true,
+"name": &"skinniest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c35mf")
+}],
+"loop": true,
+"name": &"skinniestIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wodsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32hag")
+}],
+"loop": true,
+"name": &"skinny",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65viv")
+}],
+"loop": true,
+"name": &"skinnyIdle",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
@@ -109,27 +184,11 @@ target_position = Vector2(0, 6)
 collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -14)
 texture = ExtResource("2_qjkh3")
 hframes = 5
-frame = 3
-
-[node name="Gun" type="Marker2D" parent="Sprite2D"]
-position = Vector2(14, 1)
-script = ExtResource("8")
-
-[node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D/Gun"]
-position = Vector2(-30.6589, -6.13176)
-stream = ExtResource("6")
-
-[node name="Cooldown" type="Timer" parent="Sprite2D/Gun"]
-wait_time = 0.3
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_jnr5f")
-}
+frame = 1
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -28)
@@ -145,6 +204,7 @@ position = Vector2(0, -14)
 shape = SubResource("11")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1.25, -10)
 stream = ExtResource("5")
 volume_db = -3.0
 
@@ -176,3 +236,22 @@ position = Vector2(1870, 564)
 scale = Vector2(2, 2)
 action = "shoot"
 visibility_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -10)
+scale = Vector2(0.976191, 1)
+sprite_frames = SubResource("SpriteFrames_tqiix")
+animation = &"skinnyIdle"
+
+[node name="Gun" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(4.09756, -3)
+scale = Vector2(1.02439, 1)
+script = ExtResource("8")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/Gun"]
+position = Vector2(-30.6589, -6.13176)
+stream = ExtResource("6")
+
+[node name="Cooldown" type="Timer" parent="AnimatedSprite2D/Gun"]
+wait_time = 0.3
+one_shot = true

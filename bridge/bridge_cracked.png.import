@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgrsjp1tcekly"
-path="res://.godot/imported/tear.png-53ffed854378c0531117df5e527083b2.ctex"
+uid="uid://dwg5wca14obwe"
+path="res://.godot/imported/bridge_cracked.png-5dc755ddbba97cb0445f55dd200c817e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bridge/tear.png"
-dest_files=["res://.godot/imported/tear.png-53ffed854378c0531117df5e527083b2.ctex"]
+source_file="res://bridge/bridge_cracked.png"
+dest_files=["res://.godot/imported/bridge_cracked.png-5dc755ddbba97cb0445f55dd200c817e.ctex"]
 
 [params]
 

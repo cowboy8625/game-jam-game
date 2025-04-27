@@ -4,8 +4,9 @@ extends CharacterBody2D
 @warning_ignore("unused_signal")
 signal coin_collected()
 
-@export var CHEESEBURGERS = 1
+@export var CHEESEBURGERS = 4
 @export var HEALTH = 3
+@export var TSHIRTSIZE = 1
 
 const DEFAULT_WALK_SPEED = 300.0
 const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
@@ -27,6 +28,7 @@ var _double_jump_charged := false
 func _ready():
 	# Ensure the animation is stopped at the start
 	animated_sprite.stop()
+	set_tshirt_size()
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -91,15 +93,15 @@ func die() -> void:
 func get_new_animation(is_shooting := false, isIdle := false) -> String:
 	var animation_new: String
 
-	if CHEESEBURGERS > 8:
+	if TSHIRTSIZE == TshirtSize.XL:
 		animation_new = 'fattest'
-	elif CHEESEBURGERS > 6:
+	elif TSHIRTSIZE == TshirtSize.L:
 		animation_new = 'fat'
-	elif CHEESEBURGERS > 4:
+	elif TSHIRTSIZE == TshirtSize.M:
 		animation_new = 'normal'
-	elif CHEESEBURGERS > 2:
+	elif TSHIRTSIZE == TshirtSize.S:
 		animation_new = 'skinny'
-	elif CHEESEBURGERS > 0:
+	elif TSHIRTSIZE == TshirtSize.XS:
 		animation_new = 'skinniest'
 	else:
 		animation_new = 'idle'  # Default to idle if no condition matches
@@ -130,3 +132,23 @@ func scale_player(factor: float) -> void:
 		shape.extents *= factor
 	elif shape is CircleShape2D:
 		shape.radius *= factor
+
+enum TshirtSize {
+	XS = 0,
+	S = 1,
+	M = 2,
+	L = 3,
+	XL = 4
+}
+
+func set_tshirt_size() -> void:
+	if CHEESEBURGERS > 8:
+		TSHIRTSIZE = TshirtSize.XL
+	elif CHEESEBURGERS > 6:
+		TSHIRTSIZE = TshirtSize.L
+	elif CHEESEBURGERS > 4:
+		TSHIRTSIZE = TshirtSize.M
+	elif CHEESEBURGERS > 2:
+		TSHIRTSIZE = TshirtSize.S
+	else:
+		TSHIRTSIZE = TshirtSize.XS

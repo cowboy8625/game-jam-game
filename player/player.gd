@@ -149,8 +149,13 @@ func get_enum_key(enum_type: Dictionary, value: int) -> String:
 			return key
 	return ""
 
-func get_shirt_size_name() -> String:
-	return get_enum_key(TshirtSize, TSHIRTSIZE)
+func get_shirt_size_name(shirtSize) -> String:
+	var tshirtSize = TSHIRTSIZE
+	
+	if shirtSize:
+		tshirtSize = shirtSize
+	
+	return get_enum_key(TshirtSize, tshirtSize)
 
 func set_tshirt_size() -> void:
 	if CHEESEBURGERS > 8:

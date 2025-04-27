@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func updateSize() -> void:
 	if _player:
-		_shirt_label.text = _player.get_shirt_size_name()
+		_shirt_label.text = _player.get_shirt_size_name(null)

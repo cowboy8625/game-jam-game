@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjl17ie6361iy"]
+[gd_scene load_steps=7 format=3 uid="uid://bjl17ie6361iy"]
 
 [ext_resource type="Script" uid="uid://70cp5h2qmpky" path="res://level/brick_wall.gd" id="1_x08w8"]
 [ext_resource type="Texture2D" uid="uid://bl65hk4j4cagt" path="res://level/brick-wall.png" id="2_0bys4"]
 [ext_resource type="AudioStream" uid="uid://cribvdn23bpke" path="res://level/explosion.wav" id="3_0bys4"]
+[ext_resource type="Texture2D" uid="uid://comgcyx64sbpm" path="res://gui/shirt-min.png" id="4_wpp3t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kuinj"]
 radius = 170.0
@@ -31,5 +32,25 @@ shape = SubResource("RectangleShape2D_x08w8")
 [node name="WallBreakSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0bys4")
 volume_db = 15.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -52.0
+offset_top = 362.0
+offset_right = 50.0
+offset_bottom = 760.0
+size_flags_stretch_ratio = 10.46
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_wpp3t")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

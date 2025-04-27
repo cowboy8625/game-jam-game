@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crxvp7oor6prf"]
 
 [ext_resource type="Texture2D" uid="uid://bjkqnhr3dygg6" path="res://white-ball.png" id="1_2fhwf"]
-[ext_resource type="Shader" uid="uid://dodmi3eg3s8gy" path="res://go_to_next_level.gdshader" id="1_a7nbu"]
+[ext_resource type="Shader" path="res://go_to_next_level.gdshader" id="1_a7nbu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r5fn"]
 

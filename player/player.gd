@@ -21,6 +21,7 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
 @onready var gun: Gun = animated_sprite.get_node(^"Gun")
 @onready var camera := $Camera as Camera2D
+@onready var StateMachine := self.get_parent().get_parent()
 var _double_jump_charged := false
 
 func _ready():
@@ -84,6 +85,8 @@ func takeDamage() -> void:
 func die() -> void:
 	# Restart
 	print('restart')
+	StateMachine.restartState()
+	
 
 func get_new_animation(is_shooting := false, isIdle := false) -> String:
 	var animation_new: String

@@ -7,6 +7,7 @@ var main_menu: CanvasLayer = null
 
 var current_state: State = null
 var current_level: Node = null
+var current_level_name: = ""
 var player_stats: Dictionary = {
 	"cheese_burger_count": 0,
 }
@@ -30,7 +31,9 @@ func change_state(state_name: String) -> void:
 		push_error("State " + state_name + " not found")
 		return
 	current_state = states[state_name]
+	current_level_name = state_name
 	current_state.enter_state(self)
+	
 
 func _process(delta: float) -> void:
 	if current_state == null:
@@ -49,3 +52,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 	current_state.input_state(self, event)
+	
+func restartState() -> void:
+	change_state(current_level_name)
+	

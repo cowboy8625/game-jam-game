@@ -15,8 +15,10 @@ func exit_state(machine: GameStateMachine) -> void:
 	machine.current_level.queue_free()
 	machine.player_stats["cheese_burger_count"] = player.CHEESEBURGERS
 
-func process_state(_machine: GameStateMachine, _delta: float) -> void:
-	pass
+func process_state(machine: GameStateMachine, _delta: float) -> void:
+	var player = machine.current_level.get_node("Player")
+	if player != null:
+		print(player.CHEESEBURGERS)
 
 func physics_process_state(_machine: GameStateMachine, _delta: float) -> void:
 	pass

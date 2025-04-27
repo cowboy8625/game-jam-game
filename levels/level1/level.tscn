@@ -68,7 +68,7 @@ _data = {
 &"move": SubResource("2")
 }
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_f8yee")
 
@@ -1748,7 +1748,13 @@ position = Vector2(60, 105)
 position = Vector2(1352, -8)
 
 [node name="Player" parent="." instance=ExtResource("22_3r5fn")]
+<<<<<<< Updated upstream
 position = Vector2(94, 631)
+=======
+z_index = 0
+position = Vector2(1137, -4.99988)
+CHEESEBURGERS = 10
+>>>>>>> Stashed changes
 
 [node name="BrickWall" parent="." instance=ExtResource("23_f8yee")]
 position = Vector2(1234, -366)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjl17ie6361iy"]
 
-[ext_resource type="Script" uid="uid://70cp5h2qmpky" path="res://level/brick_wall.gd" id="1_x08w8"]
+[ext_resource type="Script" path="res://level/brick_wall.gd" id="1_x08w8"]
 [ext_resource type="Texture2D" uid="uid://bl65hk4j4cagt" path="res://level/brick-wall.png" id="2_0bys4"]
 [ext_resource type="AudioStream" uid="uid://cribvdn23bpke" path="res://level/explosion.wav" id="3_0bys4"]
 

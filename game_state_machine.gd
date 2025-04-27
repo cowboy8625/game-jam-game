@@ -20,7 +20,6 @@ var player_stats: Dictionary = {
 }
 
 func _ready() -> void:
-	# EventHandler.connect("change_state", change_state)
 	EventHandler.connect("change_state", func (name: String): call_deferred("change_state", name))
 	change_state("Level1")
 

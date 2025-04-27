@@ -128,6 +128,9 @@ position = Vector2(-241, 484)
 [node name="Ozempic7" parent="Ozempic" instance=ExtResource("20_sbopp")]
 position = Vector2(-356, 647)
 
+[node name="Ozempic8" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(19, 289)
+
 [node name="GoToNextLevel" parent="." instance=ExtResource("7_5r31r")]
 position = Vector2(1060, -138)
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://crxvp7oor6prf"]
+
+[ext_resource type="Texture2D" uid="uid://bjkqnhr3dygg6" path="res://white-ball.png" id="1_2fhwf"]
+[ext_resource type="Shader" uid="uid://dodmi3eg3s8gy" path="res://go_to_next_level.gdshader" id="1_a7nbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r5fn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5r5s2"]
+shader = ExtResource("1_a7nbu")
+shader_parameter/light_color = Color(1, 1, 1, 1)
+shader_parameter/pulse_speed = 2.0
+
+[node name="GoToLevel2" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3r5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5r5s2")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_2fhwf")

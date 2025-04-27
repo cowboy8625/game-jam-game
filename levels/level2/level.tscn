@@ -251,4 +251,8 @@ position = Vector2(-249, 303)
 [node name="GoToNextLevel" parent="." instance=ExtResource("7_5r31r")]
 position = Vector2(1353, 21)
 
+[node name="GoToLastLevel" parent="." instance=ExtResource("7_5r31r")]
+position = Vector2(-684, 616)
+
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]
+[connection signal="body_entered" from="GoToLastLevel" to="." method="_on_go_to_last_level_body_entered"]

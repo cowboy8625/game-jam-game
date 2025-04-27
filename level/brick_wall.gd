@@ -10,6 +10,6 @@ func play_sound_and_free(sound: AudioStreamPlayer2D):
 	sound.connect("finished", Callable(sound, "queue_free"))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body as Player and body.CHEESEBURGERS > breakingPoint:
+	if body as Player and body.TSHIRTSIZE > breakingPoint:
 		play_sound_and_free(break_wall_sound)
 		queue_free()

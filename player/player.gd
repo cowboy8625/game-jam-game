@@ -66,7 +66,10 @@ func _physics_process(delta: float) -> void:
 	# Handle shooting action
 	var is_shooting := false
 	if Input.is_action_just_pressed("shoot" + action_suffix):
-		is_shooting = gun.shoot(animated_sprite.flip_h)
+		var shootDirection = 1
+		if animated_sprite.flip_h == true:
+			shootDirection = -1
+		is_shooting = gun.shoot(shootDirection)
 
 func play_animation(animation_name: String):
 	if animated_sprite.animation != animation_name:

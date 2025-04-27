@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://co8bwstg3ea6x" path="res://level/props/rock_1.webp" id="19_hlbc5"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_u64n8"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="22_3r5fn"]
-[ext_resource type="PackedScene" path="res://level/brick_wall.tscn" id="23_f8yee"]
+[ext_resource type="PackedScene" uid="uid://bjl17ie6361iy" path="res://level/brick_wall.tscn" id="23_f8yee"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "move"

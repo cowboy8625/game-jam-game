@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://b1r1scdy1dltr"]
+[gd_scene load_steps=29 format=4 uid="uid://b1r1scdy1dltr"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_48gma"]
-[ext_resource type="Script" uid="uid://0fdjo32eojga" path="res://levels/level1/level.gd" id="1_d2ejs"]
+[ext_resource type="Script" path="res://level/level.gd" id="1_d2ejs"]
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="2_d2ejs"]
 [ext_resource type="Texture2D" uid="uid://upfcr5xg5fvh" path="res://level/props/grass_3.webp" id="3_3r5fn"]
 [ext_resource type="Texture2D" uid="uid://bju7r7jqn8bqy" path="res://level/props/grass_2.webp" id="4_f8yee"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://co8bwstg3ea6x" path="res://level/props/rock_1.webp" id="19_hlbc5"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_u64n8"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="22_3r5fn"]
+[ext_resource type="PackedScene" uid="uid://ht1qgl22x0g5" path="res://level/brick_wall.tscn" id="23_f8yee"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "move"
@@ -1757,5 +1758,8 @@ shape = SubResource("RectangleShape2D_3r5fn")
 
 [node name="Player" parent="." instance=ExtResource("22_3r5fn")]
 position = Vector2(1137, -4.99988)
+
+[node name="BrickWall" parent="." instance=ExtResource("23_f8yee")]
+position = Vector2(1234, -366)
 
 [connection signal="body_entered" from="GoToLevel2" to="." method="_on_go_to_level_2_body_entered"]

@@ -242,13 +242,13 @@ position = Vector2(1286, 29)
 [node name="Ozempic5" parent="Ozempic" instance=ExtResource("20_sbopp")]
 position = Vector2(-179, 344)
 
-[node name="Ozempic5" parent="Ozempic/Ozempic5" instance=ExtResource("20_sbopp")]
-position = Vector2(72, 0)
+[node name="Ozempic6" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(-107, 344)
 
-[node name="Ozempic5" parent="Ozempic/Ozempic5/Ozempic5" instance=ExtResource("20_sbopp")]
-position = Vector2(-249, 303)
+[node name="Ozempic7" parent="Ozempic" instance=ExtResource("20_sbopp")]
+position = Vector2(-356, 647)
 
 [node name="GoToNextLevel" parent="." instance=ExtResource("7_5r31r")]
-position = Vector2(1353, 21)
+position = Vector2(-650, -138)
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

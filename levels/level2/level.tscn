@@ -80,6 +80,17 @@ position = Vector2(30, -10)
 [node name="Coin3" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
 position = Vector2(60, 0)
 
+[node name="CoinsArc4" type="Node2D" parent="Coins/CoinsArc4"]
+position = Vector2(515, -233)
+
+[node name="Coin" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+
+[node name="Coin2" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+position = Vector2(30, -10)
+
+[node name="Coin3" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+position = Vector2(60, 0)
+
 [node name="CoinsArc3" type="Node2D" parent="Coins"]
 position = Vector2(-47, 200)
 
@@ -111,13 +122,13 @@ position = Vector2(981, 155)
 position = Vector2(-179, 344)
 
 [node name="Ozempic6" parent="Ozempic" instance=ExtResource("20_sbopp")]
-position = Vector2(-107, 344)
+position = Vector2(-241, 484)
 
 [node name="Ozempic7" parent="Ozempic" instance=ExtResource("20_sbopp")]
 position = Vector2(-356, 647)
 
 [node name="GoToNextLevel" parent="." instance=ExtResource("7_5r31r")]
-position = Vector2(1060, -151)
+position = Vector2(1060, -138)
 
 [node name="GoToLastLevel" parent="." instance=ExtResource("7_5r31r")]
 position = Vector2(-684, 616)

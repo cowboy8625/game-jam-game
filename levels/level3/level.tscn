@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://bngx7j4ltgvuu"]
+[gd_scene load_steps=6 format=4 uid="uid://bngx7j4ltgvuu"]
 
 [ext_resource type="Script" uid="uid://deb4s31ja1uym" path="res://levels/level3/state.gd" id="1_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="1_u0ihp"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="2_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="3_m04y6"]
+[ext_resource type="PackedScene" uid="uid://c07ixsb5kmj6p" path="res://bridge/bridge.tscn" id="4_8g3kn"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_8g3kn")
@@ -16,5 +17,8 @@ position = Vector2(419, 54)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("3_m04y6")]
 tile_map_data = PackedByteArray("AAACAAEABAAAAAAAAQADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAFAAEAAwAAAAAAAQAGAAEABAAAAAAAAAD//wIABAAAAAAAAQAAAAIABAAAAAAAAAA=")
+
+[node name="Bridge" parent="." instance=ExtResource("4_8g3kn")]
+position = Vector2(-191, 141)
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

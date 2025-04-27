@@ -6,7 +6,7 @@ signal coin_collected()
 
 @export var CHEESEBURGERS = 4
 @export var HEALTH = 3
-@export var TSHIRTSIZE = 1
+@export var TSHIRTSIZE = 2
 
 const DEFAULT_WALK_SPEED = 300.0
 const ACCELERATION_SPEED = DEFAULT_WALK_SPEED * 6.0
@@ -41,8 +41,8 @@ func _physics_process(delta: float) -> void:
 
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
-	# Recalculate walk_speed based on current cheeseburgers
-	var current_walk_speed = DEFAULT_WALK_SPEED * (1.0 - CHEESEBURGERS * 0.05)
+	# Recalculate walk_speed based on current TSHIRTSIZE
+	var current_walk_speed = DEFAULT_WALK_SPEED * (1.0 - TSHIRTSIZE * 0.1)
 	current_walk_speed = max(current_walk_speed, 50.0)  # don't let it go below a minimum
 
 	var direction : float = Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * current_walk_speed
@@ -88,7 +88,7 @@ func die() -> void:
 	# Restart
 	print('restart')
 	StateMachine.restartState()
-	
+
 
 func get_new_animation(is_shooting := false, isIdle := false) -> String:
 	var animation_new: String
@@ -114,24 +114,24 @@ func get_new_animation(is_shooting := false, isIdle := false) -> String:
 
 func try_jump() -> void:
 	if is_on_floor():
-		jump_sound.pitch_scale = 1.0 * (1.0 - CHEESEBURGERS * 0.1)
+		jump_sound.pitch_scale = 1.0 * (1.0 - TSHIRTSIZE * 0.05)
 	elif _double_jump_charged:
 		_double_jump_charged = false
 		velocity.x *= 2.5
-		jump_sound.pitch_scale = 1.5 * (1.0 - CHEESEBURGERS * 0.1)
+		jump_sound.pitch_scale = 1.5 * (1.0 - TSHIRTSIZE * 0.05)
 	else:
 		return
-	velocity.y = JUMP_VELOCITY + (CHEESEBURGERS * 20)
+	velocity.y = JUMP_VELOCITY * (1.0 - TSHIRTSIZE * 0.05)
 	jump_sound.play()
 
-func scale_player(factor: float) -> void:
-	$AnimatedSprite2D.scale *= factor
+func scale_player(delta: float) -> void:
+	$AnimatedSprite2D.scale += Vector2(delta, delta)
 
 	var shape = $CollisionShape2D.shape
 	if shape is RectangleShape2D:
-		shape.extents *= factor
+		shape.extents += Vector2(delta, delta)
 	elif shape is CircleShape2D:
-		shape.radius *= factor
+		shape.radius += delta
 
 enum TshirtSize {
 	XS = 0,

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="1_u0ihp"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="2_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="3_m04y6"]
-[ext_resource type="PackedScene" uid="uid://c07ixsb5kmj6p" path="res://bridge/bridge.tscn" id="4_8g3kn"]
+[ext_resource type="PackedScene" uid="uid://bskjm24nv6s3b" path="res://bridge/bridge.tscn" id="4_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="5_m04y6"]
 
 [node name="Level" type="Node2D"]

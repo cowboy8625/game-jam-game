@@ -14,5 +14,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 	(body as Player).coin_collected.emit()
 	(body as Player).CHEESEBURGERS += 1
-	(body as Player).scale_player(1.05)
+	(body as Player).scale_player(0.025)
 	(body as Player).set_tshirt_size()

@@ -71,7 +71,7 @@ _data = {
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_f8yee")
-next_level = null
+next_level = "Level2"
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_uqbqg")]
 

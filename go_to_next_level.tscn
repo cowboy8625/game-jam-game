@@ -10,7 +10,7 @@ shader = ExtResource("1_a7nbu")
 shader_parameter/light_color = Color(1, 1, 1, 1)
 shader_parameter/pulse_speed = 2.0
 
-[node name="GoToLevel2" type="Area2D"]
+[node name="GoToLevel" type="Area2D"]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

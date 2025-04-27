@@ -1,7 +1,7 @@
 extends State
 
 class_name Level1State
-@export var next_level = "Level2"
+@export var next_level = ""
 
 func enter_state(machine: GameStateMachine):
 	machine.current_level = preload("res://levels/level1/level.tscn").instantiate()

@@ -1,21 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2tahm05mjapu"]
+[gd_scene load_steps=2 format=3 uid="uid://d2tahm05mjapu"]
 
 [ext_resource type="Script" uid="uid://d24n4ee34sgly" path="res://levels/level4/state.gd" id="1_u1w33"]
-[ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="2_0grgj"]
-[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="3_hcjxs"]
-[ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="4_qvrxj"]
-[ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="5_0grgj"]
-[ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="6_hcjxs"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u1w33")
 
-[node name="TileMapLayer" parent="." instance=ExtResource("2_0grgj")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("3_hcjxs")]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 800.0
+offset_bottom = 472.0
 
-[node name="GoToLevel2" parent="." instance=ExtResource("4_qvrxj")]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+color = Color(0.174626, 0.174626, 0.174626, 1)
 
-[node name="TshirtSize" parent="." instance=ExtResource("5_0grgj")]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("6_hcjxs")]
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "You Avoided Diabetes
+... for now"
+horizontal_alignment = 1
+vertical_alignment = 1

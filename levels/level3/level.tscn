@@ -172,4 +172,8 @@ position = Vector2(492, 610)
 z_index = 2
 position = Vector2(196, 233)
 
+[node name="Enemy5" parent="Enemies" instance=ExtResource("10_kgy1m")]
+z_index = 2
+position = Vector2(0, 1571)
+
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

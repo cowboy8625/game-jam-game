@@ -15,6 +15,7 @@ var player_stats: Dictionary = {
 	"Level1": preload("res://levels/level1/state.gd").new(),
 	"Level2": preload("res://levels/level2/state.gd").new(),
 	"Level3": preload("res://levels/level3/state.gd").new(),
+	"Level4": preload("res://levels/level4/state.gd").new(),
 }
 
 func _ready() -> void:

@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://c6h7d5ku2m6jj"]
+[gd_scene load_steps=8 format=4 uid="uid://c6h7d5ku2m6jj"]
 
+[ext_resource type="Script" uid="uid://uwmgafrk60hd" path="res://levels/level2/state.gd" id="1_1kh43"]
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_7y2jb"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="5_rnx7y"]
+[ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="7_5r31r"]
 [ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="11_wpoba"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_q8nuc"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_sbopp"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_1kh43")
 
 [node name="Player" parent="." instance=ExtResource("5_rnx7y")]
 position = Vector2(-636, 613)
@@ -244,3 +247,8 @@ position = Vector2(72, 0)
 
 [node name="Ozempic5" parent="Ozempic/Ozempic5/Ozempic5" instance=ExtResource("20_sbopp")]
 position = Vector2(-249, 303)
+
+[node name="GoToNextLevel" parent="." instance=ExtResource("7_5r31r")]
+position = Vector2(1353, 21)
+
+[connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

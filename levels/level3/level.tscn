@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="1_u0ihp"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="2_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="3_m04y6"]
-[ext_resource type="PackedScene" uid="uid://c07ixsb5kmj6p" path="res://bridge/bridge.tscn" id="4_8g3kn"]
+[ext_resource type="PackedScene" uid="uid://bskjm24nv6s3b" path="res://bridge/bridge.tscn" id="4_8g3kn"]
 [ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="7_m3v00"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="8_gdchn"]
 [ext_resource type="PackedScene" uid="uid://glxgat4eje5g" path="res://level/coin.tscn" id="8_lfyeg"]
@@ -81,10 +81,37 @@ position = Vector2(349, 193)
 position = Vector2(695, 614)
 
 [node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
-position = Vector2(-28, -305)
+position = Vector2(-28, -310)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(-26, -1)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(-26, 1)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(188, -12)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(65, -1)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(180, 7)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(74, -2)
+
+[node name="Coin2" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(211, -65)
+
+[node name="Coin" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin/Coin2" instance=ExtResource("8_lfyeg")]
+position = Vector2(74, -2)
+
+[node name="Coin3" parent="Coins/CoinsHorizontal3/Coin/Coin/Coin/Coin/Coin/Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(417, -384)
 
 [node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
-position = Vector2(139, -305)
+position = Vector2(138, -318)
 
 [node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("8_lfyeg")]
 position = Vector2(224, -114)
@@ -111,7 +138,7 @@ position = Vector2(603, -243)
 position = Vector2(502, -239)
 
 [node name="Coin3" parent="Coins/CoinsHorizontal5" instance=ExtResource("8_lfyeg")]
-position = Vector2(371, -307)
+position = Vector2(386, -312)
 
 [node name="CoinsHorizontal6" type="Node2D" parent="Coins"]
 position = Vector2(700, 610)
@@ -159,5 +186,11 @@ position = Vector2(417, 1188)
 
 [node name="Ozempic12" parent="Ozempic" instance=ExtResource("8_gdchn")]
 position = Vector2(181, 876)
+
+[node name="Coin" parent="." instance=ExtResource("8_lfyeg")]
+position = Vector2(-28, -305)
+
+[node name="Coin" parent="Coin" instance=ExtResource("8_lfyeg")]
+position = Vector2(-28, -305)
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]

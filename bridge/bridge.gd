@@ -60,7 +60,9 @@ func break_bridge() -> void:
 		audio_player.stream = break_sound
 		audio_player.play()
 		break_sound_played = true 
-	
+	if cracked_sprite:
+		cracked_sprite.visible = true
+
 	freeze = false
 	await get_tree().create_timer(1.0).timeout
 	queue_free()

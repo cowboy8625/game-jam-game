@@ -4,7 +4,7 @@ extends CharacterBody2D
 @warning_ignore("unused_signal")
 signal coin_collected()
 
-@export var CHEESEBURGERS = 1
+@export var CHEESEBURGERS = 4
 @export var HEALTH = 3
 @export var TSHIRTSIZE = 1
 
@@ -93,15 +93,15 @@ func die() -> void:
 func get_new_animation(is_shooting := false, isIdle := false) -> String:
 	var animation_new: String
 
-	if TSHIRTSIZE == TshirtSize.XXL:
+	if TSHIRTSIZE == TshirtSize.XL:
 		animation_new = 'fattest'
-	elif TSHIRTSIZE == TshirtSize.XL:
-		animation_new = 'fat'
 	elif TSHIRTSIZE == TshirtSize.L:
-		animation_new = 'normal'
+		animation_new = 'fat'
 	elif TSHIRTSIZE == TshirtSize.M:
-		animation_new = 'skinny'
+		animation_new = 'normal'
 	elif TSHIRTSIZE == TshirtSize.S:
+		animation_new = 'skinny'
+	elif TSHIRTSIZE == TshirtSize.XS:
 		animation_new = 'skinniest'
 	else:
 		animation_new = 'idle'  # Default to idle if no condition matches
@@ -138,20 +138,17 @@ enum TshirtSize {
 	S = 1,
 	M = 2,
 	L = 3,
-	XL = 4,
-	XXL = 5
+	XL = 4
 }
 
 func set_tshirt_size() -> void:
 	if CHEESEBURGERS > 8:
-		TSHIRTSIZE = TshirtSize.XXL
-	elif CHEESEBURGERS > 6:
 		TSHIRTSIZE = TshirtSize.XL
-	elif CHEESEBURGERS > 4:
+	elif CHEESEBURGERS > 6:
 		TSHIRTSIZE = TshirtSize.L
-	elif CHEESEBURGERS > 2:
+	elif CHEESEBURGERS > 4:
 		TSHIRTSIZE = TshirtSize.M
-	elif CHEESEBURGERS > 0:
+	elif CHEESEBURGERS > 2:
 		TSHIRTSIZE = TshirtSize.S
 	else:
 		TSHIRTSIZE = TshirtSize.XS

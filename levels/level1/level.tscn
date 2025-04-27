@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bew2bet5vxbfy" path="res://levels/level1/state.gd" id="1_f8yee"]
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="2_d2ejs"]
-[ext_resource type="PackedScene" path="res://tile_map_layer.tscn" id="2_uqbqg"]
+[ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="2_uqbqg"]
 [ext_resource type="Texture2D" uid="uid://upfcr5xg5fvh" path="res://level/props/grass_3.webp" id="3_3r5fn"]
 [ext_resource type="Texture2D" uid="uid://bju7r7jqn8bqy" path="res://level/props/grass_2.webp" id="4_f8yee"]
 [ext_resource type="Texture2D" uid="uid://c5xpotfxdi0ms" path="res://level/props/fern_1.webp" id="5_uqbqg"]

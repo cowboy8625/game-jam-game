@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://c6h7d5ku2m6jj"]
+[gd_scene load_steps=8 format=4 uid="uid://c6h7d5ku2m6jj"]
 
 [ext_resource type="Script" uid="uid://uwmgafrk60hd" path="res://levels/level2/state.gd" id="1_1kh43"]
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_7y2jb"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="5_rnx7y"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="7_5r31r"]
 [ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="8_5r31r"]
-[ext_resource type="PackedScene" uid="uid://1e3gp0c8opo4" path="res://level/burger.tscn" id="11_wpoba"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_q8nuc"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_sbopp"]
 
@@ -27,81 +26,291 @@ rendering_quadrant_size = 32
 [node name="CoinsHorizontal3" type="Node2D" parent="Coins"]
 position = Vector2(-381, 395)
 
-[node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsHorizontal3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsHorizontal3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, 0)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsHorizontal3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsHorizontal2" type="Node2D" parent="Coins"]
 position = Vector2(-490, 629)
 rotation = -1.62275
 
-[node name="Coin" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsHorizontal2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsHorizontal2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, 0)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsHorizontal2" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsHorizontal2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsArc1" type="Node2D" parent="Coins"]
 position = Vector2(-557, 388)
 rotation = 0.631138
 
-[node name="Coin" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsArc1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsArc1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, -10)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsArc1" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsArc1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsArc2" type="Node2D" parent="Coins"]
 position = Vector2(-156, 201)
 
-[node name="Coin" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsArc2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsArc2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, -10)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsArc2" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsArc2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsArc4" type="Node2D" parent="Coins"]
 position = Vector2(57, 202)
 
-[node name="Coin" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, -10)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsArc4" type="Node2D" parent="Coins/CoinsArc4"]
 position = Vector2(515, -233)
 
-[node name="Coin" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsArc4/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsArc4/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, -10)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsArc4/CoinsArc4" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsArc4/CoinsArc4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="CoinsArc3" type="Node2D" parent="Coins"]
 position = Vector2(-47, 200)
 
-[node name="Coin" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+[node name="Coin" parent="Coins/CoinsArc3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[node name="Coin2" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+[node name="Coin2" parent="Coins/CoinsArc3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(30, -10)
+script = null
 
-[node name="Coin3" parent="Coins/CoinsArc3" instance=ExtResource("11_wpoba")]
+[node name="Coin3" parent="Coins/CoinsArc3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(60, 0)
+script = null
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("15_q8nuc")]
 

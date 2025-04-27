@@ -1,14 +1,15 @@
-[gd_scene load_steps=25 format=4 uid="uid://ctgumjaytuoch"]
+[gd_scene load_steps=26 format=4 uid="uid://ctgumjaytuoch"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://glxgat4eje5g" path="res://level/coin.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://bxsmiv7k3fngt" path="res://level/platforms/moving_platform.webp" id="6"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://bj6am5nfc0k73" path="res://level/props/grass_1.webp" id="10"]
 [ext_resource type="Texture2D" uid="uid://ddmq5iwm2qd1j" path="res://level/props/flower_1.webp" id="11"]
 [ext_resource type="Texture2D" uid="uid://bju7r7jqn8bqy" path="res://level/props/grass_2.webp" id="12"]
+[ext_resource type="Script" uid="uid://ce47ydcl7k65m" path="res://level/coin.gd" id="12_b7y0n"]
 [ext_resource type="Texture2D" uid="uid://upfcr5xg5fvh" path="res://level/props/grass_3.webp" id="13"]
 [ext_resource type="Texture2D" uid="uid://icddaryasunc" path="res://level/props/tree_1.webp" id="14"]
 [ext_resource type="Texture2D" uid="uid://dea1a76o6b0ix" path="res://level/props/tree_2.webp" id="15"]
@@ -1213,78 +1214,99 @@ texture = ExtResource("11")
 position = Vector2(700, 610)
 
 [node name="Coin" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
 position = Vector2(30, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsHorizontal3" type="Node2D" parent="Coins"]
 position = Vector2(154, 43)
 
 [node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
 position = Vector2(30, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsHorizontal2" type="Node2D" parent="Coins"]
 position = Vector2(200, 610)
 
 [node name="Coin" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
 position = Vector2(30, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsArc1" type="Node2D" parent="Coins"]
 position = Vector2(307, 594)
 
 [node name="Coin" parent="Coins/CoinsArc1" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsArc1" instance=ExtResource("4")]
 position = Vector2(30, -10)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsArc1" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsArc2" type="Node2D" parent="Coins"]
 position = Vector2(453, 332)
 
 [node name="Coin" parent="Coins/CoinsArc2" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsArc2" instance=ExtResource("4")]
 position = Vector2(30, -10)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsArc2" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsArc4" type="Node2D" parent="Coins"]
 position = Vector2(122, 406)
 
 [node name="Coin" parent="Coins/CoinsArc4" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsArc4" instance=ExtResource("4")]
 position = Vector2(30, -10)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsArc4" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="CoinsArc3" type="Node2D" parent="Coins"]
 position = Vector2(594, 332)
 
 [node name="Coin" parent="Coins/CoinsArc3" instance=ExtResource("4")]
+script = ExtResource("12_b7y0n")
 
 [node name="Coin2" parent="Coins/CoinsArc3" instance=ExtResource("4")]
 position = Vector2(30, -10)
+script = ExtResource("12_b7y0n")
 
 [node name="Coin3" parent="Coins/CoinsArc3" instance=ExtResource("4")]
 position = Vector2(60, 0)
+script = ExtResource("12_b7y0n")
 
 [node name="Platforms" type="Node" parent="."]
 

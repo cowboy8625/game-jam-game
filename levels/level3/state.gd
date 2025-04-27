@@ -8,8 +8,8 @@ func enter_state(machine: GameStateMachine):
 	var player = machine.current_level.get_node("Player")
 	player.CHEESEBURGERS = machine.player_stats["cheese_burger_count"]
 	machine.add_child(machine.current_level)
-	var camera = player.get_node("Camera")
-	camera.limit_down = 10000
+	var camera = player.get_node("Camera") 
+	camera.limit_bottom = 10000
 	camera.limit_right = 10000
 
 func exit_state(machine: GameStateMachine) -> void:

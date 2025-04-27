@@ -39,9 +39,9 @@ func check_player_weight() -> void:
 	
 	var burger_count = player.CHEESEBURGERS
 	
-	if burger_count >= 10 and !break_sound_played:
+	if burger_count >= 6 and !break_sound_played:
 		break_bridge()
-	elif burger_count >= 5 and !crack_sound_played:
+	elif burger_count >= 3 and !crack_sound_played:
 		crack_bridge()
 
 func crack_bridge() -> void:

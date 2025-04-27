@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi5cse7d4spxa"
-path="res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex"
+uid="uid://i2chdkkq8olo"
+path="res://.godot/imported/whopper_hopper.png-e06b225f7ae38ea3a9f1090324ce2ee4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.webp"
-dest_files=["res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex"]
+source_file="res://whopper_hopper.png"
+dest_files=["res://.godot/imported/whopper_hopper.png-e06b225f7ae38ea3a9f1090324ce2ee4.ctex"]
 
 [params]
 

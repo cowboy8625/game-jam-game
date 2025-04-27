@@ -71,7 +71,6 @@ _data = {
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_f8yee")
-next_level = "Level3"
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_uqbqg")]
 
@@ -1749,8 +1748,7 @@ position = Vector2(60, 105)
 position = Vector2(1352, -8)
 
 [node name="Player" parent="." instance=ExtResource("22_3r5fn")]
-position = Vector2(1137, -4.99988)
-CHEESEBURGERS = 10
+position = Vector2(94, 631)
 
 [node name="BrickWall" parent="." instance=ExtResource("23_f8yee")]
 position = Vector2(1234, -366)

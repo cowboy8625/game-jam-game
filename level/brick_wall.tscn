@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjl17ie6361iy"]
+[gd_scene load_steps=6 format=3 uid="uid://bjl17ie6361iy"]
 
 [ext_resource type="Script" uid="uid://70cp5h2qmpky" path="res://level/brick_wall.gd" id="1_x08w8"]
 [ext_resource type="Texture2D" uid="uid://bl65hk4j4cagt" path="res://level/brick-wall.png" id="2_0bys4"]
+[ext_resource type="AudioStream" uid="uid://cribvdn23bpke" path="res://level/explosion.wav" id="3_0bys4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kuinj"]
-radius = 96.0
+radius = 170.0
 height = 1604.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x08w8"]
@@ -26,5 +27,9 @@ texture = ExtResource("2_0bys4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x08w8")
+
+[node name="WallBreakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0bys4")
+volume_db = 15.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

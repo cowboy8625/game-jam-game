@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://6mtip3ruyn"]
+[gd_scene load_steps=17 format=3 uid="uid://6mtip3ruyn"]
 
 [ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://player/bullet.webp" id="1"]
 [ext_resource type="AudioStream" uid="uid://duwm7i44o75o2" path="res://enemy/explode.wav" id="2"]
@@ -238,8 +238,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="5"]
-radius = 18.0
-height = 50.0
+radius = 23.0
+height = 48.0
 
 [sub_resource type="CanvasItemMaterial" id="6"]
 blend_mode = 1
@@ -253,11 +253,13 @@ script/source = "extends Area2D
 
 
 func _on_body_entered(body: Node) -> void:
-	print(\"Body Entered:\", body)
 	if body.name == \"Player\":
-		print('stuffd')
+		print('damage player')
 		body.takeDamage()
 "
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmsee"]
+radius = 34.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -323,9 +325,8 @@ stream = ExtResource("2")
 collision_mask = 15
 script = SubResource("GDScript_pmsee")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-rotation = -1.5708
-shape = SubResource("5")
+[node name="EnemyAreaCollision" type="CollisionShape2D" parent="EnemyArea"]
+shape = SubResource("CircleShape2D_pmsee")
 
 [connection signal="area_entered" from="EnemyArea" to="EnemyArea" method="_on_area_entered"]
 [connection signal="body_entered" from="EnemyArea" to="EnemyArea" method="_on_body_entered"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GameJam"
+config/name="Whopper Hopper"
 config/description="This demo is a pixel art 2D platformer with graphics and sound.
 
 It shows you how to code characters and physics-based objects
@@ -21,7 +21,8 @@ level, and the player is invincible, unlike the enemies."
 config/tags=PackedStringArray("2d", "demo", "official", "physics", "tilemap")
 run/main_scene="res://game_state_machine.tscn"
 config/features=PackedStringArray("4.4")
-config/icon="res://icon.webp"
+boot_splash/image="uid://i2chdkkq8olo"
+config/icon="uid://i2chdkkq8olo"
 
 [autoload]
 

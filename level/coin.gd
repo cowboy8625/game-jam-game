@@ -8,6 +8,10 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	animation_player.play(&"picked")
+
+	if not (body is Player):
+		return
+
 	(body as Player).coin_collected.emit()
 	(body as Player).CHEESEBURGERS += 1
 	(body as Player).scale_player(1.05)

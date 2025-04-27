@@ -18,10 +18,8 @@ func exit_state(machine: GameStateMachine) -> void:
 	machine.current_level.queue_free()
 	machine.player_stats["cheese_burger_count"] = player.CHEESEBURGERS
 
-func process_state(machine: GameStateMachine, _delta: float) -> void:
-	var player = machine.current_level.get_node("Player")
-	if player != null:
-		print(player.CHEESEBURGERS)
+func process_state(_machine: GameStateMachine, _delta: float) -> void:
+	pass
 
 func physics_process_state(_machine: GameStateMachine, _delta: float) -> void:
 	pass
@@ -30,5 +28,4 @@ func input_state(_machine: GameStateMachine, _event: InputEvent) -> void:
 	pass
 
 func _on_go_to_next_level_body_entered(body: Node2D) -> void:
-	print(next_level)
 	EventHandler.emit_signal(&"change_state", next_level)

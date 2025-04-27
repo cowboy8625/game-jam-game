@@ -87,8 +87,6 @@ func takeDamage() -> void:
 		HEALTH -= 1
 
 func die() -> void:
-	# Restart
-	print('restart')
 	StateMachine.restartState()
 
 

@@ -7,13 +7,15 @@ var main_menu: CanvasLayer = null
 
 var current_state: State = null
 var current_level: Node = null
+
 @onready var states: Dictionary = {
 	"Level1": preload("res://levels/level1/state.gd").new(),
 	"Level2": preload("res://levels/level2/state.gd").new(),
 }
 
 func _ready() -> void:
-	EventHandler.connect("change_state", change_state)
+	# EventHandler.connect("change_state", change_state)
+	EventHandler.connect("change_state", func (name: String): call_deferred("change_state", name))
 	change_state("Level1")
 
 func change_state(state_name: String) -> void:

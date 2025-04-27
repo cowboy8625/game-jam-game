@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2tahm05mjapu"]
+[gd_scene load_steps=6 format=3 uid="uid://d2tahm05mjapu"]
 
 [ext_resource type="Script" uid="uid://d24n4ee34sgly" path="res://levels/level4/state.gd" id="1_u1w33"]
-[ext_resource type="PackedScene" uid="uid://nftyrfslyjsj" path="res://tile_map_layer.tscn" id="2_0grgj"]
+[ext_resource type="PackedScene" path="res://tile_map_layer.tscn" id="2_0grgj"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="3_hcjxs"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="4_qvrxj"]
+[ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="5_0grgj"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u1w33")
@@ -13,3 +14,5 @@ script = ExtResource("1_u1w33")
 [node name="Player" parent="." instance=ExtResource("3_hcjxs")]
 
 [node name="GoToLevel2" parent="." instance=ExtResource("4_qvrxj")]
+
+[node name="TshirtSize" parent="." instance=ExtResource("5_0grgj")]

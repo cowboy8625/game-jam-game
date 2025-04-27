@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://c6h7d5ku2m6jj"]
+[gd_scene load_steps=9 format=4 uid="uid://c6h7d5ku2m6jj"]
 
 [ext_resource type="Script" uid="uid://uwmgafrk60hd" path="res://levels/level2/state.gd" id="1_1kh43"]
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1_7y2jb"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="5_rnx7y"]
 [ext_resource type="PackedScene" uid="uid://crxvp7oor6prf" path="res://go_to_next_level.tscn" id="7_5r31r"]
+[ext_resource type="PackedScene" uid="uid://dd7jes78gduo2" path="res://gui/tshirt_size.tscn" id="8_5r31r"]
 [ext_resource type="PackedScene" uid="uid://1e3gp0c8opo4" path="res://level/burger.tscn" id="11_wpoba"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="15_q8nuc"]
 [ext_resource type="PackedScene" uid="uid://cjpij78tbf0qh" path="res://level/ozempic.tscn" id="20_sbopp"]
@@ -135,6 +136,8 @@ position = Vector2(1060, -138)
 
 [node name="GoToLastLevel" parent="." instance=ExtResource("7_5r31r")]
 position = Vector2(-684, 616)
+
+[node name="TshirtSize" parent="." instance=ExtResource("8_5r31r")]
 
 [connection signal="body_entered" from="GoToNextLevel" to="." method="_on_go_to_next_level_body_entered"]
 [connection signal="body_entered" from="GoToLastLevel" to="." method="_on_go_to_last_level_body_entered"]

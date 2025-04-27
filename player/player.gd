@@ -116,11 +116,11 @@ func get_new_animation(is_shooting := false, isIdle := false) -> String:
 
 func try_jump() -> void:
 	if is_on_floor():
-		jump_sound.pitch_scale = 1.0 * (1.0 - TSHIRTSIZE * 0.05)
+		jump_sound.pitch_scale = 1.0 * (1.0 - TSHIRTSIZE * 0.15)
 	elif _double_jump_charged:
 		_double_jump_charged = false
 		velocity.x *= 2.5
-		jump_sound.pitch_scale = 1.5 * (1.0 - TSHIRTSIZE * 0.05)
+		jump_sound.pitch_scale = 1.5 * (1.0 - TSHIRTSIZE * 0.15)
 	else:
 		return
 	velocity.y = JUMP_VELOCITY * (1.0 - TSHIRTSIZE * 0.05)

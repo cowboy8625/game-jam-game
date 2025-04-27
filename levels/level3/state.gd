@@ -7,6 +7,7 @@ func enter_state(machine: GameStateMachine):
 	machine.current_level = preload("res://levels/level3/level.tscn").instantiate()
 	var player = machine.current_level.get_node("Player")
 	player.CHEESEBURGERS = machine.player_stats["cheese_burger_count"]
+	player.set_tshirt_size()
 	machine.add_child(machine.current_level)
 	var camera = player.get_node("Camera") 
 	camera.limit_bottom = 10000

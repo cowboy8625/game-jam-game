@@ -8,6 +8,7 @@ func enter_state(machine: GameStateMachine):
 	machine.current_level = preload("res://levels/level2/level.tscn").instantiate()
 	var player = machine.current_level.get_node("Player")
 	player.CHEESEBURGERS = machine.player_stats["cheese_burger_count"]
+	player.set_tshirt_size()
 	machine.add_child(machine.current_level)
 
 func exit_state(machine: GameStateMachine) -> void:

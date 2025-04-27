@@ -5,8 +5,9 @@ class_name Level1State
 
 func enter_state(machine: GameStateMachine):
 	machine.current_level = preload("res://levels/level1/level.tscn").instantiate()
-	var player = machine.current_level.get_node("Player")
+	var player: Player = machine.current_level.get_node("Player")
 	player.CHEESEBURGERS = machine.player_stats["cheese_burger_count"]
+	player.set_tshirt_size()
 	machine.add_child(machine.current_level)
 
 func exit_state(machine: GameStateMachine) -> void:
